@@ -5,6 +5,8 @@ using SistemaVenta.DAL.DBContext;
 using SistemaVentas.DAL.Repositorios.Contrato;
 using SistemaVentas.DAL.Repositorios;
 using SistemaVenta.Utility;
+using SistemaVentas.BLL.Servicios.Contratos;
+using SistemaVentas.BLL.Servicios;
 
 namespace SistemaVenta.IOC
 {
@@ -24,6 +26,16 @@ namespace SistemaVenta.IOC
 
             services.AddAutoMapper(typeof (AutoMapperProfile));
 
+
+
+            services.AddScoped<IRolService, RolService>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<ICategoriaService, CategoriaService>();
+            services.AddScoped<IProductoService, ProductoService>();
+            services.AddScoped<IVentaService, VentaService>();
+            services.AddScoped<IMenuService, MenuService>();
+            services.AddScoped<IDashboardService, DashboardService>();
+            
         }
 
     }
